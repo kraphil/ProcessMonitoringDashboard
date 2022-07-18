@@ -7,16 +7,15 @@ import plotly.express as px
 
 import plotly.graph_objects as go
 
-
+#hier you can add the path of your dataset 
 df = pd.read_csv('/Users/pc/Documents/work/Data_visualistion/dateWithAnnomalieType.csv')
-# add an id column and set it as the index
-# in this case the unique ID is just the country name, so we could have just
-# renamed 'country' to 'id' (but given it the display name 'country'), but
-# here it's duplicated just to show the more general pattern.
+#make the first cloumn as id 
 df['id'] = df.iloc[:, 0]
-print(df)
+#print(df)
 df.set_index('id', inplace=True, drop=False)
 #print(df.head())
+
+#hier a function to show a photo 
 def b64_image(image_filename):
     with open(image_filename, 'rb') as f:
         image = f.read()
